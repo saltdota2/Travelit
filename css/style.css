@@ -1,0 +1,280 @@
+
+   /* === Reset и базовые настройки === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #c6f0ff, #fce4ec);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === Header / Шапка сайта === */
+header {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(90deg, rgba(73, 73, 73, 0.8), rgba(215, 210, 219, 0.8)),
+              url('./images/index-header.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+header h1, h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* === Навигация === */
+nav {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #2b4eff;
+}
+nav a:hover {
+  color: #a64bf4;
+}
+
+/* === Footer / Подвал === */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  color: #777;
+}
+
+/* === Секции === */
+section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: #f8fbff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #2b4eff, #a64bf4);
+  -webkit-background-clip: text;
+  color: transparent;
+  border-left: 4px solid #2b4eff;
+  padding-left: 10px;
+  margin-bottom: 1rem;
+}
+
+/* === Кнопки === */
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #2b4eff, #a64bf4);
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 25px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover {
+  background: linear-gradient(90deg, #1e3fc1, #8e3ad8);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* === Галерея / Проекты === */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.project-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #a64bf4;
+}
+.project-card p {
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* === Отзывы === */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.review-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ddd;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.review-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.review-name {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.stars {
+  color: gold;
+  margin-bottom: 0.8rem;
+}
+blockquote {
+  font-style: italic;
+  color: #555;
+  margin: 0;
+}
+
+/* === FAQ / Вопросы и ответы === */
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+.faq-question {
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+.faq-question.active::after {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  color: #444;
+}
+.faq-answer.open {
+  max-height: 300px;
+  margin-top: 0.5rem;
+}
+
+/* === Модальное окно === */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #666;
+  cursor: pointer;
+}
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* === Анимации === */
+/* Плавное появление вверх */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* === Адаптив === */
+@media (max-width: 600px) {
+  header { height: 250px; }
+  h1 { font-size: 2rem; }
+  section { padding: 1rem; }
+  .about-content,
+  .services-content {
+    padding: 1rem;
+  }
+}
