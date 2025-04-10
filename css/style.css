@@ -11,6 +11,7 @@ body {
   background: linear-gradient(120deg, #c6f0ff, #fce4ec);
   color: #333;
   line-height: 1.6;
+  font-weight: 400;
 }
 
 /* === Header / Шапка сайта === */
@@ -42,8 +43,8 @@ header {
 header h1, h1 {
   font-size: 3rem;
   margin: 0;
-  color: #fff;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: #fdf9f9;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* === Навигация === */
@@ -69,6 +70,12 @@ footer {
   font-size: 0.9rem;
   margin-top: 3rem;
   color: #777;
+}
+.logo {
+  width: 65px; /* Задайте нужный размер */
+  height: auto;
+  display: block; /* Чтобы логотип был на отдельной строке */
+  margin: 0 auto 10px; /* Центрируем и добавляем отступ снизу */
 }
 
 /* === Секции === */
