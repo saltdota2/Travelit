@@ -46,3 +46,44 @@ const projects = [
       answer.classList.toggle('open');
     });
   });
+
+   /*отправка через формы в телеграм*/
+  const form = document.querySelector('form');
+  const TOKEN = '7381394108:AAHx4Ixp9fCxvNhIwvB0Rh8BPgFrzcUU8nk';
+  const CHAT_ID = '5019049081';
+  const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = form.querySelector('[name="name"]').value;
+    const email = form.querySelector('[name="email"]').value;
+    const message = form.querySelector('[name="message"]').value;
+
+    const text = `
+📩 <b>Новая заявка с сайта Travelit!</b>%0A
+👤 <b>Имя:</b> ${name}%0A
+📧 <b>Email:</b> ${email}%0A
+💬 <b>Сообщение:</b> ${message}
+    `;
+
+    fetch(URL_API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: text,
+        parse_mode: 'HTML'
+      })
+    }).then(res => {
+      if (res.ok) {
+        alert('✅ Заявка отправлена в Telegram!');
+        form.reset();
+      } else {
+        alert('❌ Ошибка отправки! Попробуйте позже.');
+      }
+    });
+  });
+

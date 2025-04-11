@@ -54,6 +54,7 @@
   <a class="btn" href="#" id="contact-btn">Забронировать тур</a>
 </section>
 
+
 <footer>
   <img src="./images/logo.png" alt="Логотип" class="logo">
   © 2025 Travelit. Все права защищены.
@@ -63,16 +64,15 @@
   <div class="modal-content">
     <span class="close">×</span>
     <h3>Забронировать тур</h3>
-    <form id="contact-form">
-      <input type="text" id="name" placeholder="Ваше имя" required>
-      <input type="email" id="email" placeholder="Ваш email" required>
-      <textarea id="message" placeholder="Укажите желаемое направление или вопрос" required></textarea>
+    <form action="" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="email" name="email" placeholder="Ваш email" required>
+      <textarea name="message" placeholder="Ваш вопрос или пожелание" required></textarea>
+      
+    
       <button type="submit" class="btn">Отправить заявку</button>
     </form>
   </div>
 </div>
 
 <script src="js/script.js"></script>
-
-</body>
-</html>
