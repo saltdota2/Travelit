@@ -353,6 +353,17 @@ blockquote {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes zoomInBounce {
   0% {
     opacity: 0;
@@ -366,6 +377,8 @@ blockquote {
     transform: scale(1);
   }
 }
+
+
 
 
 /* === Адаптив === */
@@ -417,14 +430,12 @@ blockquote {
   position: absolute;
   z-index: 999;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   animation: zoomInBounce 0.4s ease-out;
 }
 
 .info-box.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+  animation: zoomInBounce 0.4s ease-out;
 }
 
 .video-card video {
@@ -440,9 +451,26 @@ blockquote {
   background: linear-gradient(120deg, #c6f0ff, #fce4ec);
   border-radius: 6px;
   padding: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0px 150px rgba(101, 232, 255, 0.8);
   width: 250px;
   height: 160px;
 }
 
 
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.6s ease forwards;
+}
+
+.card.description-card {
+  animation-delay: 0.1s;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.card.video-card {
+  animation-delay: 0.3s;
+  margin-left: 10px;
+  margin-top: -5px;
+}

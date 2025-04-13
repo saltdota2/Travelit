@@ -132,14 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
     el.style.top = marker.y + '%';
 
     el.addEventListener('click', () => {
-      // Удалить предыдущую карточку
+      // Удаляем старую карточку, если есть
       const oldInfoBox = document.getElementById('info-box');
       if (oldInfoBox) oldInfoBox.remove();
 
       // Создаём новую карточку
       const newBox = document.createElement('div');
       newBox.id = 'info-box';
-      newBox.className = 'info-box active';
+      newBox.className = 'info-box';
 
       newBox.innerHTML = `
         <div class="card description-card">
@@ -154,27 +154,47 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
 
-      // Позиционируем относительно документа
+      // Позиционируем рядом с маркером
       const rect = el.getBoundingClientRect();
       const top = rect.top + el.offsetHeight + window.scrollY + 10;
       const left = rect.left + window.scrollX;
-
       newBox.style.top = `${top}px`;
       newBox.style.left = `${left}px`;
+      newBox.style.position = 'absolute';
+      newBox.style.zIndex = '999';
 
+      // Вставляем в body
       document.body.appendChild(newBox);
+
+      // Индивидуальное смещение каждой карточки
+      const descCard = newBox.querySelector('.description-card');
+      const videoCard = newBox.querySelector('.video-card');
+
+      const descOffsetX = Math.floor(Math.random() * 21) - 10;
+      const descOffsetY = Math.floor(Math.random() * 21) - 10;
+      const videoOffsetX = Math.floor(Math.random() * 21) - 10;
+      const videoOffsetY = Math.floor(Math.random() * 21) - 10;
+
+      descCard.style.marginLeft = `${descOffsetX}px`;
+      descCard.style.marginTop = `${descOffsetY}px`;
+      videoCard.style.marginLeft = `${videoOffsetX}px`;
+      videoCard.style.marginTop = `${videoOffsetY}px`;
+
+      // Анимация включается через классы
+      newBox.classList.add('active');
     });
 
     mapImage.appendChild(el);
   });
 
-  // Закрытие при клике вне карточки/метки
+  // Закрытие карточек при клике вне
   document.addEventListener('click', (e) => {
     const isPin = e.target.classList.contains('map-pin');
-    const isBox = e.target.closest('#info-box');
-    if (!isPin && !isBox) {
-      const infoBox = document.getElementById('info-box');
-      if (infoBox) infoBox.remove();
+    const isInsideBox = e.target.closest('#info-box');
+    if (!isPin && !isInsideBox) {
+      const box = document.getElementById('info-box');
+      if (box) box.remove();
     }
   });
 });
+
