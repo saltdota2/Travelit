@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const mapImage = document.querySelector('.map-container');
 const mapInfo = document.getElementById('info-box');
 
+// Данные меток: название, координаты, описание и путь к видео
 const markersData = [
   {
     name: 'Карелия',
@@ -124,41 +125,55 @@ const markersData = [
   }
 ];
 
+// Создание и отображение меток на карте
 markersData.forEach(marker => {
   const el = document.createElement('img');
-  el.src = 'images/map-pin.png';
+  el.src = './images/map-pin.png';
   el.className = 'map-pin';
   el.style.left = marker.x + '%';
   el.style.top = marker.y + '%';
 
-  el.addEventListener('click', () => {
+  el.addEventListener('click', (event) => {
+    // Вставка контента карточек
     mapInfo.innerHTML = `
       <div class="card description-card">
         <h3>${marker.name}</h3>
         <p>${marker.description}</p>
       </div>
       <div class="card video-card">
-        <video width="100%" height="120" autoplay muted loop playsinline controls>
+        <video autoplay muted loop playsinline controls>
           <source src="${marker.video}" type="video/mp4">
           Ваш браузер не поддерживает видео.
         </video>
       </div>
     `;
+
+    // Позиционируем блок рядом с меткой
+    const rect = el.getBoundingClientRect();
+    const containerRect = mapImage.getBoundingClientRect();
+
+    const top = rect.top - containerRect.top + el.offsetHeight + 10;
+    const left = rect.left - containerRect.left;
+
+    mapInfo.style.top = `${top}px`;
+    mapInfo.style.left = `${left}px`;
+
+    // Анимация появления
     mapInfo.classList.add('active');
   });
 
   mapImage.appendChild(el);
-  // Закрытие карточек при клике вне
+});
+
+// Закрытие карточек при клике вне
 document.addEventListener('click', (e) => {
-    const isClickOnPin = e.target.classList.contains('map-pin');
-    const isInsideInfoBox = e.target.closest('#info-box');
-  
-    if (!isClickOnPin && !isInsideInfoBox) {
-      mapInfo.classList.remove('active');
-      mapInfo.innerHTML = '';
-    }
-  });
-  
+  const isClickOnPin = e.target.classList.contains('map-pin');
+  const isInsideInfoBox = e.target.closest('#info-box');
+
+  if (!isClickOnPin && !isInsideInfoBox) {
+    mapInfo.classList.remove('active');
+    mapInfo.innerHTML = '';
+  }
 });
 
   
