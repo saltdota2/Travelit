@@ -353,6 +353,20 @@ blockquote {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes zoomInBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 /* === Адаптив === */
 @media (max-width: 600px) {
@@ -404,10 +418,7 @@ blockquote {
   z-index: 999;
   display: flex;
   gap: 1rem;
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: all 0.3s ease;
+  animation: zoomInBounce 0.4s ease-out;
 }
 
 .info-box.active {

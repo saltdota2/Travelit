@@ -83,97 +83,98 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*карта путешествий*/ 
-const mapImage = document.querySelector('.map-container');
-const mapInfo = document.getElementById('info-box');
+document.addEventListener('DOMContentLoaded', () => {
+  const mapImage = document.querySelector('.map-container');
 
-// Данные меток: название, координаты, описание и путь к видео
-const markersData = [
-  {
-    name: 'Карелия',
-    x: 27,
-    y: 33,
-    description: 'Прекрасные леса и озёра Карелии...',
-    video: './videos/video-karelia.mp4'
-  },
-  {
-    name: 'Камчатка',
-    x: 85,
-    y: 30,
-    description: 'Вулканы Камчатки ждут тебя!',
-    video: './videos/video-kamchatka.mp4'
-  },
-  {
-    name: 'Байкал',
-    x: 67,
-    y: 72,
-    description: 'Глубочайшее озеро планеты...',
-    video: './videos/video-card-baikal.mp4'
-  },
-  {
-    name: 'Алтай',
-    x: 49,
-    y: 77,
-    description: 'Горные хребты и мистические долины...',
-    video: './videos/video-altay.mp4'
-  },
-  {
-    name: 'Чукотка',
-    x: 76,
-    y: 18,
-    description: 'Край вечной мерзлоты и северного сияния...',
-    video: './videos/video-chukotka.mp4'
-  }
-];
+  const markersData = [
+    {
+      name: 'Карелия',
+      x: 27,
+      y: 33,
+      description: 'Прекрасные леса и озёра Карелии...',
+      video: './videos/video-karelia.mp4'
+    },
+    {
+      name: 'Камчатка',
+      x: 85,
+      y: 30,
+      description: 'Вулканы Камчатки ждут тебя!',
+      video: './videos/video-kamchatka.mp4'
+    },
+    {
+      name: 'Байкал',
+      x: 67,
+      y: 72,
+      description: 'Глубочайшее озеро планеты...',
+      video: './videos/video-card-baikal.mp4'
+    },
+    {
+      name: 'Алтай',
+      x: 49,
+      y: 77,
+      description: 'Горные хребты и мистические долины...',
+      video: './videos/video-altay.mp4'
+    },
+    {
+      name: 'Чукотка',
+      x: 76,
+      y: 18,
+      description: 'Край вечной мерзлоты и северного сияния...',
+      video: './videos/video-chukotka.mp4'
+    }
+  ];
 
-// Создание и отображение меток на карте
-markersData.forEach(marker => {
-  const el = document.createElement('img');
-  el.src = './images/map-pin.png';
-  el.className = 'map-pin';
-  el.style.left = marker.x + '%';
-  el.style.top = marker.y + '%';
+  markersData.forEach(marker => {
+    const el = document.createElement('img');
+    el.src = './images/map-pin.png';
+    el.className = 'map-pin';
+    el.style.left = marker.x + '%';
+    el.style.top = marker.y + '%';
 
-  el.addEventListener('click', (event) => {
-    // Вставка контента карточек
-    mapInfo.innerHTML = `
-      <div class="card description-card">
-        <h3>${marker.name}</h3>
-        <p>${marker.description}</p>
-      </div>
-      <div class="card video-card">
-        <video autoplay muted loop playsinline controls>
-          <source src="${marker.video}" type="video/mp4">
-          Ваш браузер не поддерживает видео.
-        </video>
-      </div>
-    `;
+    el.addEventListener('click', () => {
+      // Удалить предыдущую карточку
+      const oldInfoBox = document.getElementById('info-box');
+      if (oldInfoBox) oldInfoBox.remove();
 
-    // Позиционируем блок рядом с меткой
-    const rect = el.getBoundingClientRect();
-    const containerRect = mapImage.getBoundingClientRect();
+      // Создаём новую карточку
+      const newBox = document.createElement('div');
+      newBox.id = 'info-box';
+      newBox.className = 'info-box active';
 
-    const top = rect.top - containerRect.top + el.offsetHeight + 10;
-    const left = rect.left - containerRect.left;
+      newBox.innerHTML = `
+        <div class="card description-card">
+          <h3>${marker.name}</h3>
+          <p>${marker.description}</p>
+        </div>
+        <div class="card video-card">
+          <video autoplay muted loop playsinline controls>
+            <source src="${marker.video}" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+          </video>
+        </div>
+      `;
 
-    mapInfo.style.top = `${top}px`;
-    mapInfo.style.left = `${left}px`;
+      // Позиционируем относительно документа
+      const rect = el.getBoundingClientRect();
+      const top = rect.top + el.offsetHeight + window.scrollY + 10;
+      const left = rect.left + window.scrollX;
 
-    // Анимация появления
-    mapInfo.classList.add('active');
+      newBox.style.top = `${top}px`;
+      newBox.style.left = `${left}px`;
+
+      document.body.appendChild(newBox);
+    });
+
+    mapImage.appendChild(el);
   });
 
-  mapImage.appendChild(el);
+  // Закрытие при клике вне карточки/метки
+  document.addEventListener('click', (e) => {
+    const isPin = e.target.classList.contains('map-pin');
+    const isBox = e.target.closest('#info-box');
+    if (!isPin && !isBox) {
+      const infoBox = document.getElementById('info-box');
+      if (infoBox) infoBox.remove();
+    }
+  });
 });
-
-// Закрытие карточек при клике вне
-document.addEventListener('click', (e) => {
-  const isClickOnPin = e.target.classList.contains('map-pin');
-  const isInsideInfoBox = e.target.closest('#info-box');
-
-  if (!isClickOnPin && !isInsideInfoBox) {
-    mapInfo.classList.remove('active');
-    mapInfo.innerHTML = '';
-  }
-});
-
-  
