@@ -142,22 +142,22 @@ document.addEventListener('DOMContentLoaded', () => {
       newBox.className = 'info-box';
 
       newBox.innerHTML = `
-        <div class="card description-card">
-          <h3>${marker.name}</h3>
-          <p>${marker.description}</p>
-        </div>
-        <div class="card video-card">
-          <video autoplay muted loop playsinline controls>
-            <source src="${marker.video}" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-          </video>
-        </div>
-      `;
+      <div class="card description-card">
+        <h3>${marker.name}</h3>
+        <p>${marker.description}</p>
+      </div>
+      <div class="card video-card">
+        <video autoplay muted loop playsinline controls>
+          <source src="${marker.video}" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+      </div>
+    `;
 
       // Позиционируем рядом с маркером
       const rect = el.getBoundingClientRect();
       const top = rect.top + el.offsetHeight + window.scrollY + 10;
-      const left = rect.left + window.scrollX;
+      const left = rect.left + window.scrollX - 350;
       newBox.style.top = `${top}px`;
       newBox.style.left = `${left}px`;
       newBox.style.position = 'absolute';
@@ -170,15 +170,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const descCard = newBox.querySelector('.description-card');
       const videoCard = newBox.querySelector('.video-card');
 
-      const descOffsetX = Math.floor(Math.random() * 21) - 10;
-      const descOffsetY = Math.floor(Math.random() * 21) - 10;
-      const videoOffsetX = Math.floor(Math.random() * 21) - 10;
-      const videoOffsetY = Math.floor(Math.random() * 21) - 10;
+      const descOffsetX = Math.floor(Math.random() * 31) - 15;
+      const descOffsetY = Math.floor(Math.random() * 31) - 15;
+      const videoOffsetX = Math.floor(Math.random() * 31) - 15;
+      const videoOffsetY = Math.floor(Math.random() * 31) - 15;
 
       descCard.style.marginLeft = `${descOffsetX}px`;
       descCard.style.marginTop = `${descOffsetY}px`;
       videoCard.style.marginLeft = `${videoOffsetX}px`;
       videoCard.style.marginTop = `${videoOffsetY}px`;
+
+
+      
+      setTimeout(() => {
+        descCard.classList.add('floaty');
+        videoCard.classList.add('floaty');
+      }, 600);
 
       // Анимация включается через классы
       newBox.classList.add('active');
@@ -188,13 +195,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Закрытие карточек при клике вне
-  document.addEventListener('click', (e) => {
+  setTimeout(() => {
+    document.addEventListener('click', outsideClickListener);
+  }, 10);
+  
+  function outsideClickListener(e) {
     const isPin = e.target.classList.contains('map-pin');
     const isInsideBox = e.target.closest('#info-box');
     if (!isPin && !isInsideBox) {
       const box = document.getElementById('info-box');
       if (box) box.remove();
+      document.removeEventListener('click', outsideClickListener); // снимаем
     }
-  });
+  }
 });
 
