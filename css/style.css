@@ -11,7 +11,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg, #c6f0ff, #fce4ec);
+  background: linear-gradient(120deg,  rgba(157, 189, 197, 0.774), rgba(239, 255, 255, 0.767));
   color: #333;
   line-height: 1.6;
   font-weight: 400;
@@ -161,7 +161,7 @@ footer {
 section {
   max-width: 1200px;
   margin: 2rem auto;
-  background: #f8fbff;
+  background: linear-gradient(90deg, rgba(215, 210, 219, 0.7), rgba(73, 73, 73, 0.5));
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
@@ -177,10 +177,10 @@ section:hover {
 h2 {
   font-size: 2rem;
   font-weight: 600;
-  background: linear-gradient(90deg, #2b4eff, #a64bf4);
+  background-color: #333333d5;
   -webkit-background-clip: text;
   color: transparent;
-  border-left: 4px solid #2b4eff;
+  border-left: 4px solid #505050;
   padding-left: 10px;
   margin-bottom: 1rem;
 }
@@ -455,8 +455,8 @@ blockquote {
   border-radius: 6px;
   padding: 0;
   box-shadow: 0 0px 150px rgba(101, 232, 255, 0.8);
-  width: 350px;
-  height: 222px;
+  width: 525px;
+  height: 333px;
 
   /* Плавное появление */
   opacity: 0;

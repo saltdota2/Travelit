@@ -204,7 +204,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const isInsideBox = e.target.closest('#info-box');
     if (!isPin && !isInsideBox) {
       const box = document.getElementById('info-box');
-      if (box) box.remove();
+        if (box) {
+          box.innerHTML = '';
+          box.classList.remove('active');
+        }
       document.removeEventListener('click', outsideClickListener); // снимаем
     }
   }
