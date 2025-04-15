@@ -145,7 +145,7 @@ nav.nav-bar {
 footer {
   text-align: center;
   font-size: 0.9rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   color: #777;
 }
 
@@ -306,42 +306,7 @@ blockquote {
   margin-top: 0.5rem;
 }
 
-/* === Модальное окно === */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-.modal-content {
-  background: #fff;
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 2rem;
-  border-radius: 15px;
-  max-width: 500px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-.close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 2rem;
-  color: #666;
-  cursor: pointer;
-}
-.modal-content input,
-.modal-content textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-}
+
 
 /* === Анимации === */
 /* Плавное появление вверх */
@@ -395,7 +360,7 @@ blockquote {
 /*карта путешествий*/
 .map-modern {
   padding: 6rem 2rem;
-  background: linear-gradient(180deg, #eaf4ff 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #eaf4ff 0%, #ffffff 100%); 
   color: #222;
   position: relative;
   z-index: 1;
@@ -552,9 +517,9 @@ blockquote {
 }
 
 .about-photo img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 20px;
+  width: 600;
+  max-width: 600px;
+  border-radius: 2px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.1);
 }
 
