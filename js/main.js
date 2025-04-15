@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* === Telegram отправка === */
-  const form = document.querySelector('#contact-form');
+  const form = document.querySelector('#contact-form-bottom');
   if (form) {
     const TOKEN = '7381394108:AAHx4Ixp9fCxvNhIwvB0Rh8BPgFrzcUU8nk';
     const CHAT_ID = '5019049081';
