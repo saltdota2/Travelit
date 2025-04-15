@@ -32,45 +32,84 @@
   </div>
 </nav>
 
-<section id="about">
-  <div class="about-content">
-    <h2>О нас</h2>
-    <p>Travelit — команда энтузиастов, создающая туры по самым интересным и скрытым уголкам России.</p>
+<section id="about" class="about-modern">
+  <div class="about-wrapper">
+    <div class="about-text">
+      <h2>Кто мы такие?</h2>
+      <p>
+        Travelit — это не просто туристическое агентство. Это команда исследователей, влюблённых в Россию, 
+        её безбрежные просторы, первозданную природу и дикие, незатронутые человеком уголки. 
+        Мы создаём экспедиции, где каждый маршрут — как фильм, а каждый участник — его главный герой.
+      </p>
+      <p>
+        Забудьте о банальных турах и скучных экскурсиях. Наши направления — это 
+        <strong>уникальные локации</strong>, о которых не пишут в путеводителях: 
+        от плато Путорана до далёкой Чукотки, от величественного Алтая до волшебного озера Байкал.
+      </p>
+      <p>
+        С Travelit вы не просто путешествуете — вы проживаете настоящие приключения.
+      </p>
+    </div>
+    <div class="about-photo">
+      <img src="./images/about-hero.jpg" alt="Команда Travelit">
+    </div>
   </div>
 </section>
 
-<section id="services">
-  <div class="services-content">
-    <h2>Наши туры</h2>
-    <ul>
-      <li>Индивидуальные экспедиции по труднодоступным местам</li>
-      <li>Групповые туры с гидом по природным достопримечательностям</li>
-      <li>Организация походов и кемпинга в диких уголках России</li>
-    </ul>
+
+<section id="tours" class="tours-modern">
+  <div class="tours-header">
+    <h2>Маршруты, которые вдохновляют</h2>
+    <p>
+      Travelit предлагает уникальные туры, созданные для настоящих исследователей. 
+      Наши маршруты ведут к местам, где нет толп туристов, где можно почувствовать природу, свободу и настоящий дух приключений.
+    </p>
+  </div>
+
+  <div class="tours-grid">
+    <div class="tour-block">
+      <img src="./images/putorana.jpg" alt="Плато Путорана">
+      <div class="tour-text">
+        <h3>Экспедиция на плато Путорана</h3>
+        <p>Затерянное среди сибирской тайги, плато Путорана — это рай для тех, кто жаждет тишины, водопадов и полного уединения.</p>
+      </div>
+    </div>
+
+    <div class="tour-block">
+      <img src="./images/altay.jpg" alt="Горы Алтая">
+      <div class="tour-text">
+        <h3>Треккинг по горам Алтая</h3>
+        <p>Алтайские горы — это святилище дикой природы, где каждый шаг — это встреча с магией земли и воздуха.</p>
+      </div>
+    </div>
+
+    <div class="tour-block">
+      <img src="./images/kamchatka.jpg" alt="Вулканы Камчатки">
+      <div class="tour-text">
+        <h3>Вулканы Камчатки</h3>
+        <p>Извержения, ледники, дикая природа. Камчатка — это мощь Земли во всей её красе.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="portfolio">
-  <h2>Популярные направления</h2>
-  <div class="portfolio-grid" id="portfolio-grid"></div>
-</section>
 
-<section id="travel-map">
-  <h2>Карта путешествий</h2>
+<section id="travel-map" class="map-modern">
+  <div class="map-header">
+    <h2>География наших путешествий</h2>
+    <p>
+      От бескрайних просторов Чукотки до мистических долин Алтая — наша карта отмечена маршрутами, 
+      которые вдохновляют. Мы не просто соединяем точки на карте — мы открываем живые истории 
+      и культурное наследие России, куда не дотянулась рука массового туризма.
+    </p>
+  </div>
+
   <div class="map-container">
     <img src="./images/map-russia.jpg" alt="Карта России" class="map-image" />
-
-    <!-- Метки -->
-   <!-- <img src="./images/map-pin.png" class="map-pin" style="top: 32%; left: 28%;" data-place="Карелия">
-    <img src="./images/map-pin.png" class="map-pin" style="top: 30%; left: 85%;" data-place="Камчатка">
-    <img src="./images/map-pin.png" class="map-pin" style="top: 73%; left: 66.5%;" data-place="Байкал">
-    <img src="./images/map-pin.png" class="map-pin" style="top: 74%; left: 48%;" data-place="Алтай">
-    <img src="./images/map-pin.png" class="map-pin" style="top: 17%; left: 77%;" data-place="Чукотка">
-  --> 
-    <!-- Карточки -->
     <div class="info-box" id="info-box"></div>
   </div>
 </section>
+
 
 
 <section id="contacts">

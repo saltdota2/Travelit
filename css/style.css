@@ -11,8 +11,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg,  rgba(157, 189, 197, 0.774), rgba(239, 255, 255, 0.767));
-  color: #333;
+  background: linear-gradient(120deg,  rgba(255, 255, 255, 0.774), rgba(255, 255, 255, 0.925));
+  color: #0e0d0d;
   line-height: 1.6;
   font-weight: 400;
 }
@@ -141,8 +141,6 @@ nav.nav-bar {
 }
 
 
-
-
 /* === Footer / Подвал === */
 footer {
   text-align: center;
@@ -150,6 +148,8 @@ footer {
   margin-top: 3rem;
   color: #777;
 }
+
+
 .logo {
   width: 65px; /* Задайте нужный размер */
   height: auto;
@@ -157,21 +157,19 @@ footer {
   margin: 0 auto 10px; /* Центрируем и добавляем отступ снизу */
 }
 
+
 /* === Секции === */
 section {
-  max-width: 1200px;
-  margin: 2rem auto;
-  background: linear-gradient(90deg, rgba(215, 210, 219, 0.7), rgba(73, 73, 73, 0.5));
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0.2rem auto;
+  padding: 0;
+  background-color: rgba(236, 236, 236, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
 }
 section:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
@@ -180,7 +178,6 @@ h2 {
   background-color: #333333d5;
   -webkit-background-clip: text;
   color: transparent;
-  border-left: 4px solid #505050;
   padding-left: 10px;
   margin-bottom: 1rem;
 }
@@ -396,11 +393,50 @@ blockquote {
 }
 
 /*карта путешествий*/
-#travel-map {
-  padding: 4rem 2rem;
-  background-color: #f8f9fa;
-  text-align: left;
+.map-modern {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #eaf4ff 0%, #ffffff 100%);
+  color: #222;
+  position: relative;
+  z-index: 1;
 }
+
+.map-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.map-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #2b4eff, #a64bf4);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.map-header p {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.map-container {  
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 20px;
+}
+
 
 .map-container {
   position: relative;
@@ -408,17 +444,10 @@ blockquote {
   max-width: 100%;
 }
 
-.map-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  pointer-events: none;
-  user-select: none;
-}
 
 .map-pin {
   position: absolute;
-  width: 30px;
+  width: 18px;
   height: auto;
   cursor: pointer;
   transform: translate(-50%, -100%);
@@ -426,7 +455,7 @@ blockquote {
 }
 
 .map-pin:hover {
-  transform: translate(-50%, -100%) scale(1.2);
+  transform: translate(-50%, -100%) scale(1.6);
 }
 
 .info-box {
@@ -479,4 +508,120 @@ blockquote {
   animation: 
     fadeSlideUp 0.6s ease forwards,
     float 4s ease-in-out 0.6s infinite;
+}
+/*стили для "О нас"*/
+.about-modern {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #f3fbff 0%, #fce4ec 100%);
+  color: #333;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #2b4eff, #a64bf4);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.about-photo {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+/*стили для "наши туры"*/
+.tours-modern {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #fce4ec 0%, #ffffff 100%);
+  color: #333;
+}
+
+.tours-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.tours-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #a64bf4, #2b4eff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.tours-header p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.tours-grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tour-block {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour-block:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.tour-block img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.tour-text {
+  padding: 1.5rem;
+}
+
+.tour-text h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  color: #2b4eff;
+}
+
+.tour-text p {
+  font-size: 1rem;
+  color: #555;
 }
