@@ -112,11 +112,34 @@
 
 
 
-<section id="contacts">
-  <h2>Контакты</h2>
-  <p>Email: Travelit@mail.ru</p>
-  <p>Telegram: @Travelit</p>
-  <a class="btn" href="#" id="contact-btn">Связаться с нами</a>
+<section id="contacts" class="contact-modern">
+  <div class="contact-wrapper">
+    <div class="contact-text">
+      <h2>Остались вопросы?</h2>
+      <p>
+        Свяжитесь с нами любым удобным способом — мы подскажем, подберём маршрут и сделаем ваше путешествие незабываемым. 
+        Travelit всегда на связи!
+      </p>
+      <ul class="contact-info">
+        <li><strong>Email:</strong> travelit00@gmail.com</li>
+        <li><strong>Telegram:</strong> @Travelit</li>
+      </ul>
+      <div class="social-icons">
+        <a href="#"><img src="./images/icon-tg.png" alt="Telegram"></a>
+        <a href="#"><img src="./images/icon-vk.png" alt="VK"></a>
+        <a href="#"><img src="./images/icon-inst.png" alt="Instagram"></a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form id="contact-form-bottom">
+        <input type="text" name="name" placeholder="Ваше имя" required />
+        <input type="email" name="email" placeholder="Ваш Email" required />
+        <textarea name="message" placeholder="Ваш вопрос или пожелание" required></textarea>
+        <button type="submit" class="btn">Отправить</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 
@@ -125,20 +148,6 @@
   © 2025 Travelit. Все права защищены.
 </footer>
 
-<div id="contact-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">×</span>
-    <h3>Связаться  с нами</h3>
-    <form id="contact-form" action="" method="POST">
-      <input type="text" name="name" placeholder="Ваше имя" required>
-      <input type="email" name="email" placeholder="Ваш email" required>
-      <textarea name="message" placeholder="Ваш вопрос или пожелание" required></textarea>
-      
-    
-      <button type="submit" class="btn">Отправить заявку</button>
-    </form>
-  </div>
-</div>
 
 <script type="module" src="js/main.js"></script>
 

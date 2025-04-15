@@ -161,7 +161,7 @@ footer {
 /* === Секции === */
 section {
   max-width: 100%;
-  margin: 0.2rem auto;
+  margin: 0.6rem auto;
   padding: 0;
   background-color: rgba(236, 236, 236, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -557,6 +557,7 @@ blockquote {
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.1);
 }
+
 /*стили для "наши туры"*/
 .tours-modern {
   padding: 6rem 2rem;
@@ -603,6 +604,7 @@ blockquote {
 .tour-block:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  transform:  scale(1.2);
 }
 
 .tour-block img {
@@ -624,4 +626,83 @@ blockquote {
 .tour-text p {
   font-size: 1rem;
   color: #555;
+}
+
+/*стили для "контакты"*/
+.contact-modern {
+  background: linear-gradient(180deg, #fce4ec 0%, #e0f7fa 100%);
+  padding: 6rem 2rem;
+  color: #333;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-text h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #2b4eff, #a64bf4);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.contact-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info li {
+  list-style: none;
+  margin-bottom: 0.6rem;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  align-self: flex-start;
 }
