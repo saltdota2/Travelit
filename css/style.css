@@ -21,7 +21,7 @@ body {
 header {
   width: 100%;
   height: 400px;
-  background: linear-gradient(90deg, rgba(73, 73, 73, 0.9), rgba(215, 210, 219, 0.9));
+  background:linear-gradient(90deg, rgba(46, 46, 46, 0.9), rgba(58, 58, 58, 0.9));
   background-size: cover;
   background-position: center;
   position: relative;
@@ -37,8 +37,8 @@ header::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/R1.jpg') center/cover no-repeat;
-  opacity: 0.03; /* Настрой эту прозрачность как тебе комфортно */
+  background: url('../images/R4.jpg') center/cover no-repeat;
+  opacity: 0.2; /* Настрой эту прозрачность как тебе комфортно */
   z-index: 0;
   pointer-events: none; /* чтобы не мешал кликам */
 }
@@ -52,7 +52,7 @@ header::before {
   justify-content: center;
   align-items: center;
   text-align: center;
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -203,6 +203,19 @@ h2 {
 }
 
 /* === Галерея / Проекты === */
+.photos-modern{
+  background: linear-gradient(180deg, #f3fbff 0%, #fce4ec 100%);
+  padding: 3rem 2rem 5rem 2rem;
+  color: #333;
+}
+.photos-header h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg,  #2b4eff, #a64bf4);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -232,6 +245,19 @@ h2 {
 }
 
 /* === Отзывы === */
+.reviews-modern {
+  background: linear-gradient(180deg, #fce4ec 0%, #ffffff 100%);
+  padding: 3rem 3rem 5rem 3rem; 
+  color: #333; 
+}
+.reviews-header h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #2b4eff, #a64bf4);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .review-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -276,6 +302,19 @@ blockquote {
 }
 
 /* === FAQ / Вопросы и ответы === */
+.faq-modern{
+  background: linear-gradient(180deg, #eaf4ff 0%, #fce4ec 100%);
+  padding: 3rem 5rem 5rem 5rem;
+  color: #333;
+}
+.faq-header h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg,  #2b4eff, #a64bf4);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .faq-item {
   border-bottom: 1px solid #ddd;
   padding: 1rem 0;
@@ -357,123 +396,7 @@ blockquote {
   }
 }
 
-/*карта путешествий*/
-.map-modern {
-  padding: 6rem 2rem;
-  background: linear-gradient(180deg, #eaf4ff 0%, #ffffff 100%); 
-  color: #222;
-  position: relative;
-  z-index: 1;
-}
 
-.map-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 4rem;
-}
-
-.map-header h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(90deg, #2b4eff, #a64bf4);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.map-header p {
-  font-size: 1.2rem;
-  color: #444;
-  line-height: 1.8;
-}
-
-.map-container {  
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.map-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  user-select: none;
-  pointer-events: none;
-  border-radius: 20px;
-}
-
-
-.map-container {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-}
-
-
-.map-pin {
-  position: absolute;
-  width: 18px;
-  height: auto;
-  cursor: pointer;
-  transform: translate(-50%, -100%);
-  transition: transform 0.2s;
-}
-
-.map-pin:hover {
-  transform: translate(-50%, -100%) scale(1.6);
-}
-
-.info-box {
-  position: absolute;
-  z-index: 999;
-  display: flex;
-  gap: 3rem;
-  animation: zoomInBounce 0.4s ease-out;
-}
-
-.info-box.active {
-  animation: zoomInBounce 0.4s ease-out;
-}
-
-.video-card video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-
-.card {
-  text-align: center;
-  background: linear-gradient(120deg, #c6f0ff, #fce4ec);
-  border-radius: 6px;
-  padding: 0;
-  box-shadow: 0 0px 150px rgba(101, 232, 255, 0.8);
-  width: 525px;
-  height: 333px;
-
-  /* Плавное появление */
-  opacity: 0;
-  animation: fadeSlideUp 0.6s ease forwards;
-}
-
-.card.description-card {
-  animation-delay: 0.1s;
-  margin-right: 10px;
-  margin-top: 5px;
-}
-
-.card.video-card {
-  animation-delay: 0.3s;
-  margin-left: 10px;
-  margin-top: -5px;
-}
-
-.card.floaty {
-  animation: 
-    fadeSlideUp 0.6s ease forwards,
-    float 4s ease-in-out 0.6s infinite;
-}
 /*стили для "О нас"*/
 .about-modern {
   padding: 6rem 2rem;
@@ -593,9 +516,125 @@ blockquote {
   color: #555;
 }
 
+/*карта путешествий*/
+.map-modern {
+  padding: 6rem 2rem;
+  /*background: linear-gradient(180deg, #eaf4ff 0%, #ffffff 100%); */
+  background: linear-gradient(180deg, #ffffff 0%, #eaf4ff 100%);
+  color: #222;
+  position: relative;
+  z-index: 1;
+}
+
+.map-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.map-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #2b4eff, #a64bf4);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.map-header p {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.map-container {  
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+
+.map-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+
+.map-pin {
+  position: absolute;
+  width: 18px;
+  height: auto;
+  cursor: pointer;
+  transform: translate(-50%, -100%);
+  transition: transform 0.2s;
+}
+
+.map-pin:hover {
+  transform: translate(-50%, -100%) scale(1.6);
+}
+
+.info-box {
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  gap: 3rem;
+  animation: zoomInBounce 0.4s ease-out;
+}
+
+.info-box.active {
+  animation: zoomInBounce 0.4s ease-out;
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card {
+  text-align: center;
+  background: linear-gradient(120deg, #c6f0ff, #fce4ec);
+  border-radius: 6px;
+  padding: 0;
+  box-shadow: 0 0px 150px rgba(101, 232, 255, 0.8);
+  width: 525px;
+  height: 333px;
+/*плавное появление*/
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease forwards;
+}
+
+.card.description-card{
+ animation-delay:0.1s;
+ margin-right: 10px;
+ margin-top: 5px;
+}
+
+.card.video-card{
+ animation-delay: 0.3s;
+ margin-left: 10px;
+ margin-top: -5px;
+}
+
+.card.floaty{
+ animation: fadeSlideUp 0.6s ease forwards, float 4s ease-in-out 0.6s infinite;
+}
+
 /*стили для "контакты"*/
 .contact-modern {
-  background: linear-gradient(180deg, #fce4ec 0%, #e0f7fa 100%);
+  /*background: linear-gradient(180deg, #fce4ec 0%, #e0f7fa 100%);*/
+  background: linear-gradient(180deg, #eaf4ff, #fce4ec);
   padding: 6rem 2rem;
   color: #333;
 }
